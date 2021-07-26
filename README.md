@@ -2,7 +2,7 @@
 
 # Sobre o projeto
 
-API com código escalável feita com banco de dados SQL server e hospedada na Azure.
+  API com código escalável feita com banco de dados SQL server e hospedada na Azure.
 
 # Tecnologias utilizadas
 
@@ -14,20 +14,22 @@ API com código escalável feita com banco de dados SQL server e hospedada na Az
 
 # Como executar o projeto
 
-Programa utilizado para teste: insomnia.
-obs: pode-se usar outros semelhantes, como o postman.
-obs': foram criados dois controllers para o teste: Authors(autores) e Publishers(editoras), podendo ser criados quantos mais necessários a partir dos models.
+  Software utilizado para teste: insomnia.
 
-Após aberto o insomnia ou semelhante, criar as requisições: GET, POST, PUT e DELETE.
+  obs: pode-se usar outros semelhantes, como o postman.
 
-Requisições:
+  obs': foram criados dois controllers para o teste: Authors(autores) e Publishers(editoras), podendo ser criados quantos mais se fizer necessário a partir dos models.
+
+  Após aberto o insomnia ou semelhante, criar as requisições: GET, POST, PUT e DELETE.
+
+  Requisições:
 
 
 - POST:
 
-utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors ou https://livrariaapi2.azurewebsites.net/api/Publishers.
+  utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors ou https://livrariaapi2.azurewebsites.net/api/Publishers.
 
-obs: id é gerada automáticamente ao criar um publisher ou author.
+  obs: id é gerada automáticamente ao criar um publisher ou author.
 
 ```bash
 exemplo de corpo da requisição (json): 
@@ -57,18 +59,18 @@ Publishers:
 
 - GET: 
 
-Para mostrar todos, utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors ou https://livrariaapi2.azurewebsites.net/api/Publishers.
+  Para mostrar todos, utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors ou https://livrariaapi2.azurewebsites.net/api/Publishers.
 
-Para mostrar apenas um, utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
+  Para mostrar apenas um, utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
 
 
 - PUT:
 
-utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
+  utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
 
-obs: id da url e do corpo da requisição devem ser, obrigatóriamente, o mesmo número.
+  obs: id da url e do corpo da requisição devem ser, obrigatóriamente, o mesmo número.
 
-Faz alterações em um objeto previamente criado utilizando POST.
+  Faz alterações em um objeto previamente criado utilizando POST.
 
 ```bash
 exemplo de corpo da requisição (json):
@@ -100,9 +102,9 @@ Publishers:
 
 - DELETE:
 
-utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
+  utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
 
-obs: será excluído o objeto da id informada na url.
+  obs: será excluído o objeto da id informada na url.
 
 # Autor
 
