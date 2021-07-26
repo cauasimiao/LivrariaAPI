@@ -8,7 +8,7 @@
 - SQL server
 - Azure
 
-# Como utilizar a API
+# Sobre o projeto
 
   API e bancos de dados (SQL server) hospedados na Azure.
   
