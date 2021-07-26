@@ -1,9 +1,5 @@
 # LivrariaAPI
 
-# Sobre o projeto
-
-  API com código escalável feita com banco de dados SQL server e hospedada na Azure.
-
 # Tecnologias utilizadas
 
 - C#
@@ -12,42 +8,37 @@
 - SQL server
 - Azure
 
-# Como executar o projeto
+# Como utilizar a API
 
-  Software utilizado para teste: insomnia.
+  API e bancos de dados (SQL server) hospedados na Azure.
+  
+  Foram criados dois controllers para o teste: Authors(autores) e Publishers(editoras), podendo ser criados quantos mais se fizer necessário a partir dos models.
 
-  obs: pode-se usar outros semelhantes, como o postman.
+#Publishers
 
-  obs': foram criados dois controllers para o teste: Authors(autores) e Publishers(editoras), podendo ser criados quantos mais se fizer necessário a partir dos models.
+- Post:
 
-  Após aberto o insomnia ou semelhante, criar as requisições: GET, POST, PUT e DELETE.
+obs: id é gerada automáticamente ao criar um publisher ou author.
 
-  Requisições:
-
-
-- POST:
-
-  utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors ou https://livrariaapi2.azurewebsites.net/api/Publishers.
-
-  obs: id é gerada automáticamente ao criar um publisher ou author.
+  Request: https://livrariaapi2.azurewebsites.net/api/Publishers
 
 ```bash
-exemplo de corpo da requisição (json): 
-Authors:
+exemplo de corpo da requisição (json):  
 {
-  "lastName": "Bennet",
-  "firstName": "Abraham",
-  "phone": "415 658-9932",
-  "address": "6223 Bateman St.",
-  "city": "Berkeley",
-  "state": "CA",
-  "zip": "94705",
-  "emailAddress": "abraham.bennet@gmail.com",
-  "bookAuthors": []
+  "publisherName": "Eu Livros",
+  "city": "Ourinhos",
+  "state": "SP",
+  "country": "BR",
+  "books": [],
+  "users": []
 }
-  
-Publishers:
+```
+
+  Response:
+ 
+```bash
 {
+  "pubId": <número da id>,
   "publisherName": "Eu Livros",
   "city": "Ourinhos",
   "state": "SP",
@@ -59,24 +50,165 @@ Publishers:
 
 - GET: 
 
-  Para mostrar todos, utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors ou https://livrariaapi2.azurewebsites.net/api/Publishers.
+  Request: https://livrariaapi2.azurewebsites.net/api/Publishers
+  
+  Response:
+ 
+```bash
+[
+  {
+    "pubId": <número da id>,
+    "publisherName": "Eu Livros",
+    "city": "Ourinhos",
+    "state": "SP",
+    "country": "BR",
+    "books": [],
+    "users": []
+  }
+]
+```
+  
+  Request: https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
 
-  Para mostrar apenas um, utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
+  Response:
+ 
+```bash
+{
+  "pubId": <número da id>,
+  "publisherName": "Eu Livros",
+  "city": "Ourinhos",
+  "state": "SP",
+  "country": "BR",
+  "books": [],
+  "users": []
+}
+```
 
 
 - PUT:
-
-  utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
-
-  obs: id da url e do corpo da requisição devem ser, obrigatóriamente, o mesmo número.
-
+  
   Faz alterações em um objeto previamente criado utilizando POST.
+  
+  obs: id da url e do corpo da requisição devem ser, obrigatóriamente, o mesmo número.
+  
+  Request: https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
 
 ```bash
 exemplo de corpo da requisição (json):
-Authors:
 {
-  "authorId": 1,
+  "pubId": <número da id>,
+  "publisherName": "Você Livros",
+  "city": "Ourinhos",
+  "state": "SP",
+  "country": "BR",
+  "books": [],
+  "users": []
+}
+```
+  
+  Response: No body returned for response
+
+- DELETE:
+
+  Request: https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
+
+  Response: No body returned for response
+
+#Authors
+
+- Post:
+
+obs: id é gerada automáticamente ao criar um publisher ou author.
+
+  Request: https://livrariaapi2.azurewebsites.net/api/Authors
+
+```bash
+exemplo de corpo da requisição (json):  
+{
+  "lastName": "Bennet",
+  "firstName": "Abraham",
+  "phone": "415 658-9932",
+  "address": "6223 Bateman St.",
+  "city": "Berkeley",
+  "state": "CA",
+  "zip": "94705",
+  "emailAddress": "abraham.bennet@gmail.com",
+  "bookAuthors": []
+}
+```
+
+  Response:
+ 
+```bash
+{
+  "authorId": <número da id>,
+  "lastName": "Bennet",
+  "firstName": "Abraham",
+  "phone": "415 658-9932",
+  "address": "6223 Bateman St.",
+  "city": "Berkeley",
+  "state": "CA",
+  "zip": "94705",
+  "emailAddress": "abraham.bennet@gmail.com",
+  "bookAuthors": []
+}
+```
+
+- GET: 
+
+  Request: https://livrariaapi2.azurewebsites.net/api/Authors
+  
+  Response:
+ 
+```bash
+[
+  {
+    "authorId": <número da id>,
+    "lastName": "Bennet",
+    "firstName": "Abraham",
+    "phone": "415 658-9932",
+    "address": "6223 Bateman St.",
+    "city": "Berkeley",
+    "state": "CA",
+    "zip": "94705",
+    "emailAddress": "abraham.bennet@gmail.com",
+    "bookAuthors": []
+  }
+]
+```
+  
+  Request: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id
+
+  Response:
+ 
+```bash
+{
+  "authorId": <número da id>,
+  "lastName": "Bennet",
+  "firstName": "Abraham",
+  "phone": "415 658-9932",
+  "address": "6223 Bateman St.",
+  "city": "Berkeley",
+  "state": "CA",
+  "zip": "94705",
+  "emailAddress": "abraham.bennet@gmail.com",
+  "bookAuthors": []
+}
+```
+
+
+- PUT:
+  
+  Faz alterações em um objeto previamente criado utilizando POST.
+  
+  obs: id da url e do corpo da requisição devem ser, obrigatóriamente, o mesmo número.
+  
+  Request: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id
+
+```bash
+exemplo de corpo da requisição (json):
+{
+  "authorId": <número da id>,
   "lastName": "José",
   "firstName": "Abraham",
   "phone": "415 658-9932",
@@ -87,24 +219,15 @@ Authors:
   "emailAddress": "abraham.bennet@gmail.com",
   "bookAuthors": []
 }
-
-Publishers:
-{
-  "pubId": 1,
-  "publisherName": "Você Livros",
-  "city": "Ourinhos",
-  "state": "SP",
-  "country": "BR",
-  "books": [],
-  "users": []
-}
 ```
+  
+  Response: No body returned for response
 
 - DELETE:
 
-  utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
+  Request: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id
 
-  obs: será excluído o objeto da id informada na url.
+  Response: No body returned for response
 
 # Autor
 
