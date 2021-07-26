@@ -24,6 +24,7 @@ Requisições:
 
 
 - POST, utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors ou https://livrariaapi2.azurewebsites.net/api/Publishers.
+
 obs: id é gerada automáticamente ao criar um publisher ou author.
 
 ```bash
@@ -60,6 +61,7 @@ Para mostrar apenas um, utilizar url: https://livrariaapi2.azurewebsites.net/api
 
 
 - PUT, utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
+
 obs: id da url e do corpo da requisição devem ser, obrigatóriamente, o mesmo número.
 
 Faz alterações em um objeto previamente criado utilizando POST.
@@ -93,6 +95,7 @@ Publishers:
 ```
 
 - DELETE, utilizar url: https://livrariaapi2.azurewebsites.net/api/Authors/ + número da id ou https://livrariaapi2.azurewebsites.net/api/Publishers/ + número da id
+
 obs: será excluído o objeto da id informada na url.
 
 # Autor
