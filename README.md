@@ -16,7 +16,7 @@
 
 #Publishers
 
-- Post:
+- POST:
 
 obs: id é gerada automáticamente ao criar um publisher ou author.
 
@@ -116,7 +116,7 @@ exemplo de corpo da requisição (json):
 
 #Authors
 
-- Post:
+- POST:
 
 obs: id é gerada automáticamente ao criar um publisher ou author.
 
