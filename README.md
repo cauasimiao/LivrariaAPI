@@ -89,7 +89,7 @@ Authors:
 }
 
 Publishers:
- {
+{
   "pubId": 1,
   "publisherName": "Você Livros",
   "city": "Ourinhos",
